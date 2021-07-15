@@ -10,7 +10,8 @@
 	// update Dockerfile with your user's UID/GID if not 1000.
 	"runArgs": [
         "-v", "${localEnv:HOME}/.aws:/home/vscode/.aws",
-		"-v", "${localEnv:HOME}/mydocs:/home/vscode/.ssh"
+		"-v", "${localEnv:HOME}/mydocs:/home/vscode/.ssh",
+		"-v", "${localEnv:HOME}/.kube:/home/vscode/.kube"
     ],
 
 	// Use 'settings' to set *default* container specific settings.json values on container create. 

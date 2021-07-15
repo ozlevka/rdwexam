@@ -8,6 +8,7 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 ARG TERRAFORM_VERSION=1.0.2
 ARG KUBECTL_VERSION="v1.19.3"
+ARG HELM_VERSION="v3.6.3"
 
 RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
@@ -21,7 +22,12 @@ RUN apt-get update \
     # Install kubectl
     && curl -LO "https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
     && chmod +x ./kubectl \
-    && mv ./kubectl /usr/bin/ \    
+    && mv ./kubectl /usr/bin/ \   
+    # Install helm
+    && curl -L -o helm.tar.gz "https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz" \
+    && tar xfz helm.tar.gz \ 
+    && mv linux-amd64/helm /usr/bin \
+    && rm -rf linux-amd64 helm.tar.gz \
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
     && groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \

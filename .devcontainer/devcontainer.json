@@ -9,7 +9,8 @@
 	// Comment out the next line to run as root instead. Linux users, 
 	// update Dockerfile with your user's UID/GID if not 1000.
 	"runArgs": [
-        "-v", "${localEnv:HOME}/.aws:/home/vscode/.aws"
+        "-v", "${localEnv:HOME}/.aws:/home/vscode/.aws",
+		"-v", "${localEnv:HOME}/mydocs:/home/vscode/.ssh"
     ],
 
 	// Use 'settings' to set *default* container specific settings.json values on container create. 
@@ -20,7 +21,7 @@
                 "path": "/bin/bash"
             },
             "fish": {
-                "path": "/usr/local/bin/fish"
+                "path": "/usr/bin/fish"
             }
         },
 		"python.linting.pylintEnabled": true,
@@ -33,7 +34,7 @@
 
 	"extensions": [
         "ms-python.python",
-        "mauve.terraform",
+        "4ops.terraform",
 		"ms-kubernetes-tools.vscode-kubernetes-tools",
 		"eriklynd.json-tools"
 	]

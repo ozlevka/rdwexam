@@ -5,7 +5,7 @@ variable "general" {
   })
   default     = {
       project_name       = "radware"
-      node_instance_type = "r5n.xlarge"
+      node_instance_type = "t3.large"
   }
   description = "general used variables"
 }

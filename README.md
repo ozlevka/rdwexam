@@ -15,6 +15,6 @@
 For run terraform flow you need:
 
 1. AWS access file: Default location in $HOME/.aws
-    * [https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html?icmpid=docs_iam_console](Geneterate accesskey) 
+    * [Geneterate accesskey](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html?icmpid=docs_iam_console) 
     * Run aws configure 
     

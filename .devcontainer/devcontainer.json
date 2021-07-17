@@ -1,5 +1,5 @@
 {
-	"name": "Radware exam Sample",
+	"name": "Radware exam",
 	"dockerFile": "Dockerfile",
     "remoteUser": "vscode",
 
